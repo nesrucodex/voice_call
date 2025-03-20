@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voice Call</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="call-status">
+        <div class="avatar">
+          <i class="fas fa-user"></i>
+          <div class="connection-indicator">
+            <i class="fas fa-circle"></i>
+          </div>
+        </div>
+        <div id="roomDisplay" class="room-info" style="display: none;">
+          <div>Room ID</div>
+          <div class="room-id" id="roomID"></div>
+          <button class="copy-button" id="copyRoom">
+            <i class="fas fa-copy"></i> <span>
+              Copy Room ID
+            </span> 
+          </button>
+        </div>
+        <button id="reconnectBtn" class="reconnect-button" style="display: none;">
+          <i class="fas fa-sync-alt"></i> Reconnect
+        </button>
+      </div>
+
+      <div class="input-group">
+        <input
+          id="inputRoomID"
+          type="text"
+          placeholder="Enter Room ID to join or leave empty to create"
+        />
+      </div>
+
+      <div class="call-controls">
+        <button id="joinRoom" class="control-button join" title="Join Call">
+          <i class="fas fa-phone"></i>
+        </button>
+        <button id="muteAudio" class="control-button mute" title="Mute/Unmute">
+          <i class="fas fa-microphone"></i>
+        </button>
+        <button id="leaveRoom" class="control-button leave" disabled title="End Call">
+          <i class="fas fa-phone-slash fa-rotate-225"></i>
+        </button>
+      </div>
+
+      <div id="status">
+        <i class="fas fa-circle status-icon"></i>
+        <span class="status-text">Disconnected</span>
+      </div>
+    </div>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
